@@ -21,7 +21,8 @@ import java.util.Locale
 import java.util.UUID
 
 class MainActivity : Activity() {
-
+private val supabaseUrl = "https://taiwpchtowqhwzfwikxk.supabase.co"
+private val supabaseKey = "sb_publishable_98ujQazly_wFvActgPUC_A_WWL2HIc9"
     private val prefs by lazy { getSharedPreferences("AnyNetData", MODE_PRIVATE) }
     private val channelId = "anynet_due"
 
