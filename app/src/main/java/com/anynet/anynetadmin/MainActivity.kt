@@ -102,9 +102,11 @@ class MainActivity : Activity() {
 
         val customers = getCustomers()
         val payments = getPayments()
-        val paid = customers.count { it.getBoolean("paid") }
-        val unpaid = customers.length() - paid
-
+     var paid = 0
+for (i in 0 until customers.length()) {
+    if (customers.getJSONObject(i).optBoolean("paid")) paid++
+}
+val unpaid = customers.length() - paid
         val summary = TextView(this).apply {
             text = "Customers: ${customers.length()}    Paid: $paid    Unpaid: $unpaid\nPayments: ${payments.length()}"
             textSize = 18f
